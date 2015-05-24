@@ -7,7 +7,7 @@ hexo-theme-yilia-biu
 
 ##修改
 2015-5-24 - 修改PC端时侧边栏可添加背景图片，图片JS中设置可随机
-
+![样式](http://7ximdq.com1.z0.glb.clouddn.com/1432476250468)
 
 hexo-theme-yilia
 ================
