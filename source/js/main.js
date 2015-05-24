@@ -20,6 +20,35 @@ var Tips = (function(){
 	}
 })();
 
+var BackPic = (function(){
+	var pics = ['http://7ximdq.com1.z0.glb.clouddn.com/1432371755835?imageView2/2/w/600/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432458568441?imageView2/2/w/660/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432458576572?imageView2/2/w/640/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432456940456?imageView2/2/w/640/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432458590760?imageView2/2/w/640/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432458591836?imageView2/2/w/650/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432458593460?imageView2/2/w/600/format/jpg',
+                'http://7ximdq.com1.z0.glb.clouddn.com/1432457205540?imageView2/2/w/550/format/jpg'];
+	var num = Math.floor(Math.random()*pics.length);
+	var url = pics[num];
+	return {
+		init: function(){
+			//$('.left-col').css('background', 'url('+ url +') center no-repeat');
+			$.ajax({
+				url: 'http://weiboxb.sinaapp.com/background',
+				type: 'POST',
+				data: { bg: 'bg'},
+				success: function(url) {
+					$('.left-col').css('background', 'url('+ url +') no-repeat center');
+				},
+				error: function(e) {
+					$('.left-col').css('background', 'url('+ url +') no-repeat center');
+				}
+			})
+		}
+	}
+})();
+
 var Main = (function(){
 
 	var resetTags = function(){
@@ -135,6 +164,7 @@ var Main = (function(){
 			enterAnm();
 			fancyInit();
 			Tips.init();
+			BackPic.init();
 			new Mobile({
 				ctn: document.getElementsByClassName("slider-trigger")[0]
 			});
